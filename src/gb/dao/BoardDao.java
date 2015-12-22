@@ -34,7 +34,7 @@ public class BoardDao {
 						.setNo(rs.getInt("BNO"))
 						.setEmail(rs.getString("EMAIL"))
 						.setContent(rs.getString("CONTENT"))
-						.setModDate(rs.getDate("MOD_DATE")));
+						.setModDate(rs.getString("MOD_DATE")));
 			}
 			
 			return boards;

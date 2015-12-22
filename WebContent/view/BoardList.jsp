@@ -14,7 +14,7 @@
 <c:forEach var="list" items="${boardList }">
 이메일: ${list.getEmail() }<br>
 수정날짜: ${list.getModDate()}<br>
-${list.getContent() }<br>
+내용: ${list.getContent() }<br>
 </c:forEach>
 </body>
 </html>

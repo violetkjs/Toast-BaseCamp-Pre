@@ -7,8 +7,8 @@ public class Board {
 	private String email;
 	private String pwd;
 	private String content;
-	private Date creDate;
-	private Date modDate;
+	private String creDate;
+	private String modDate;
 	
 	public int getNo(){
 		return bno;
@@ -46,20 +46,20 @@ public class Board {
 		return this;
 	}
 	
-	public Date getModDate(){
+	public String getModDate(){
 		return modDate;
 	}
 	
-	public Board setModDate(Date modDate){
+	public Board setModDate(String modDate){
 		this.modDate = modDate;
 		return this;
 	}
 	
-	public Date getCreDate(){
+	public String getCreDate(){
 		return creDate;
 	}
 	
-	public Board setCreDate(Date creDate){
+	public Board setCreDate(String creDate){
 		this.creDate = creDate;
 		return this;
 	}
