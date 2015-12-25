@@ -7,6 +7,8 @@
 <title>글쓰기</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+
+var limitByte = 4000;
     function check(fo){
     	var email = $("#txt_email").val();
     	var pwd = $("#txt_pwd").val();
@@ -22,9 +24,30 @@
     		fo.submit();
     	}
     }
+    
+    function checkByte() {
+ 	   
+    	var len = 0;
+        var limitByte = 4000;
+        var message = $("textarea[name='content']");
+        
+        
+        for(var i =0; i < message.val().length; i++)
+        	len++;
+        
+        if(len > limitByte){
+        	 alert(limitByte+"를 초과하셨습니다");
+        	 message.val(message.val().substring(0,limitByte));
+        	 len = limitByte;
+        }
+        
+        $("input[name='size']").val(len);
+    }
+    
 </script>
 </head>
 <body>
+<h1>글쓰기</h1>
 <FORM action="add" method="post">
 <table>
 <tr>
@@ -37,7 +60,11 @@
 </tr>
 <tr>
 <td>내용: </td>
-<td><textarea rows="10" cols="30" name="content"></textarea></td>
+<td><textarea rows="10" cols="30"  name="content" onKeyUp="checkByte()"></textarea></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="text" name="size" size="1" value="0" maxlength="2" readonly> / 4000 글자</td>
 </tr>
 </table><br>
 <input type="button" value="동록" onclick="check(this.form)">

@@ -11,7 +11,7 @@
 <form action="../check" method="post">
 번호:<input type="text" name="no" size="5" value="${param.no }" readonly><br>
 이메일: <input type="text" name="email" value="${param.email }" readonly><br>
-비밀번호: <input type="password" name="pwd" size="10"><br>
+비밀번호: <input type="password" name="pwd" size="10"><br><br>
 <input type="submit" value="확인">
 <input type="reset" value="취소">
 </form>
